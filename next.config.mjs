@@ -11,7 +11,12 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "utfs.io",
-        pathname: `/a/${process.env.NEXT_PUBLIC_UPLOADTHING_APP_ID}/*`,
+        pathname: "/**", // universal wildcard for UploadThing-hosted images
+      },
+      {
+        protocol: "https",
+        hostname: "*.ufs.sh", // handles app-specific subdomains like 3r4v1hv6gq.ufs.sh
+        pathname: "/**",
       },
     ],
   },
